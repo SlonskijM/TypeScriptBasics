@@ -1,21 +1,12 @@
 "use strict";
 //m)
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 var UserRole;
 (function (UserRole) {
     UserRole["Admin"] = "ADMIN";
     UserRole["User"] = "USER";
     UserRole["Guest"] = "GUEST";
 })(UserRole || (UserRole = {}));
-var tuples = [
+const tuples = [
     65,
     "Hello",
     true,
@@ -28,15 +19,17 @@ console.log(tuples[1]);
 console.log(tuples[3]);
 console.log(tuples[4], "\n");
 //o)
-var first1 = tuples[0], second1 = tuples[1], other1 = tuples.slice(2);
+const [first1, second1, ...other1] = tuples;
 console.log(first1);
 console.log(second1);
 console.log(other1, "\n");
 //p)
-var readonlyTuple = __spreadArray([], tuples, true);
+const readonlyTuple = [
+    ...tuples,
+];
 //q)
-console.log(readonlyTuple === tuples, "\n");
+console.log(readonlyTuple === tuples, "\n"); // false - Потому-что сравниваем разные ссылки на объекты в памяти!
 //r)
-var secondTuple = [43, "Hello"];
+const secondTuple = [43, "Hello"]; // ? - указываем, что элемет необязательеный
 console.log(secondTuple);
 //# sourceMappingURL=tuples.js.map

@@ -1,9 +1,11 @@
 "use strict";
 function main(mass, str) {
+    // функция возвращает [number, number, number, string]
     return [
-        Math.max.apply(Math, mass),
-        Math.min.apply(Math, mass),
-        mass.reduce(function (acc, num) {
+        Math.max(...mass),
+        Math.min(...mass),
+        mass.reduce((acc, num) => {
+            // reduce -сумма всех эоементов массива!
             return acc + num;
         }, 0),
         str[0],

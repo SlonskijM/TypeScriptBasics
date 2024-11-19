@@ -1,8 +1,10 @@
 function main(mass: number[], str: string): [number, number, number, string] {
+  // функция возвращает [number, number, number, string]
   return [
     Math.max(...mass),
     Math.min(...mass),
     mass.reduce((acc, num) => {
+      // reduce -сумма всех эоементов массива!
       return acc + num;
     }, 0),
     str[0],

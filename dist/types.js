@@ -1,27 +1,29 @@
 "use strict";
-// Примитивные типы TS
-var num = 20;
-var str = "Str";
-var bool = true;
-var n = null;
-var u = undefined;
-// Type Assertion
-var someValue = "This is a string";
-var strLength = someValue.length;
+// Примитивные типы TS d)
+let num = 20;
+let str = "Str";
+let bool = true;
+let n = null; // когда мы явно указываем, что переменная не имеет значения
+let u; // let u
+// Type Assertion - Явно казать тип перменной e)
+let someValue = "This is a string";
+let strLength = someValue.length; // length - Длинна!
 console.log(strLength);
-var someArray = [1, 2, 3, 4];
-var numberArray = someArray;
-console.log(numberArray.reduce(function (acc, num) {
+let someArray = [1, 2, 3, 4];
+let numberArray = someArray; // Массив из чисел
+console.log(numberArray.reduce((acc, num) => {
+    // reduce - Сумма чисел массива!
     return acc + num;
 }, 0));
-// Неявно типизированные переменные
-var message = "Hello!!!";
+// Неявно типизированные переменные f)
+const message = "Hello!!!";
 console.log(message);
-var numbers = [1, 2, 3];
+let numbers = [1, 2, 3];
 numbers.push(4);
 console.log(numbers);
-// Пример работы с null и undefined  а так же демонстрация union типа
+// Пример работы с null и undefined  а так же демонстрация union типа g) & h)
 function checkValue(value) {
+    // union тип - value: number | null | undefined.
     if (value === null) {
         return "\nValue is null.";
     }
@@ -29,16 +31,16 @@ function checkValue(value) {
         return "Value is undefined.";
     }
     else {
-        return "Value is ".concat(typeof value, ".");
+        return `Value is ${typeof value}.`;
     }
 }
-var value = null;
-var value1;
-var value2 = 50;
+let value = null;
+let value1;
+let value2 = 50;
 console.log(checkValue(value));
 console.log(checkValue(value1));
 console.log(checkValue(value2));
-// enum
+// enum i)
 var Count;
 (function (Count) {
     Count["First"] = "\u043F\u0435\u0440\u0432\u044B\u0439";

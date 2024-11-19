@@ -37,9 +37,9 @@ const readonlyTuple: readonly [number, string, boolean, object, UserRole] = [
 
 //q)
 
-console.log(readonlyTuple === tuples, "\n");
+console.log(readonlyTuple === tuples, "\n"); // false - Потому-что сравниваем разные ссылки на объекты в памяти!
 
 //r)
 
-const secondTuple: [number, string, boolean?] = [43, "Hello"];
+const secondTuple: [number, string, boolean?] = [43, "Hello"]; // ? - указываем, что элемет необязательеный
 console.log(secondTuple);

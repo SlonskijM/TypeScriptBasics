@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
@@ -10,7 +10,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "sourceMap": true,
-    "noEmitOnError": false
+    "noEmitOnError": false // если true то не скомпилирует с ошибкой
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
